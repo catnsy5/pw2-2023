@@ -15,7 +15,7 @@
 <table class="table" width="100%" border="1" cellspacing="2" cellpadding="2">
     <thead>
         <tr>
-            <th>#</th>
+            <th>Id</th>
             <th>No</th>
             <th>Nama</th>
             <th>Kota</th>
