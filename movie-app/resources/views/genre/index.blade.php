@@ -1,11 +1,11 @@
 @extends('layouts/main')
 
 @section('content')
-<h1 class="mt-4">Movies Data</h1>
+<h1 class="mt-4">Genres Data</h1>
                         <div class="d-flex justify-content-between mb-4">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Movies</li>
+                                <li class="breadcrumb-item active">Genres</li>
                             </ol>
                             <a href="#">
                                 <button class="btn btn-success" type="submit">Create Data</button>
@@ -35,51 +35,17 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($genres as $genres)
                                         <tr>
-                                            <td>1</td>
-                                            <td>Horor</td>
-                                            <td>Seram</td>
+                                            <td>{{ $genres['no'] }}</td>
+                                            <td>{{ $genres['nama_genre'] }}</td>
+                                            <td>{{ $genres['deskripsi'] }}</td>
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Comedy</td>
-                                            <td>Lucu</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Romance</td>
-                                            <td>Percintaan</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Action</td>
-                                            <td>Seru</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Thriller</td>
-                                            <td>Seru Abis</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
