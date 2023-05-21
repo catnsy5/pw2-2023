@@ -1,11 +1,11 @@
 @extends('layouts/main')
 
 @section('content')
-<h1 class="mt-4">Movies Data</h1>
+<h1 class="mt-4">Reviews Data</h1>
                         <div class="d-flex justify-content-between mb-4">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Movies</li>
+                                <li class="breadcrumb-item active">Reviews</li>
                             </ol>
                             <a href="#">
                                 <button class="btn btn-success" type="submit">Create Data</button>
@@ -41,42 +41,20 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($reviews as $review)
                                         <tr>
-                                            <td>1</td>
-                                            <td>The Shawshank Redemption</td>
-                                            <td>John Doe</td>
-                                            <td>9.5</td>
-                                            <td>The movie is a masterpiece. The acting, the storyline, and the ending are all fantastic</td>
-                                            <td>2022-03-12</td>
+                                            <td>{{ $review['no'] }}</td>
+                                            <td>{{ $review['film'] }}</td>
+                                            <td>{{ $review['user'] }}</td>
+                                            <td>{{ $review['rating'] }}</td>
+                                            <td>{{ $review['review'] }}</td>
+                                            <td>{{ $review['tanggal'] }}</td>
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Parasite</td>
-                                            <td>Mark Johnson</td>
-                                            <td>9.0</td>
-                                            <td>This movie is a gripping social commentary that is both humorous and thought provoking. Highly recommended.</td>
-                                            <td>2019-05-01</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Inception</td>
-                                            <td>Jane Smith</td>
-                                            <td>8.5</td>
-                                            <td>The concept of this movie is mind-blending and the special effects are incredible. However, I felt the plot was a bit convoluted at times.</td>
-                                            <td>2022-04-23</td>
-                                            <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
