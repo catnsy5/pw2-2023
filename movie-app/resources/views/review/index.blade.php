@@ -43,12 +43,21 @@
                                     <tbody>
                                         @foreach ($reviews as $review)
                                         <tr>
+<<<<<<< HEAD
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $review->film }}</td>
                                             <td>{{ $review->user }}</td>
                                             <td>{{ $review->rating }}</td>
                                             <td>{{ $review->review }}</td>
                                             <td>{{ $review->tanggal }}</td>
+=======
+                                            <td>{{ $review['no'] }}</td>
+                                            <td>{{ $review['film'] }}</td>
+                                            <td>{{ $review['user'] }}</td>
+                                            <td>{{ $review['rating'] }}</td>
+                                            <td>{{ $review['review'] }}</td>
+                                            <td>{{ $review['tanggal'] }}</td>
+>>>>>>> 067da160660c050a1aa792517b308d330699271e
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
@@ -59,4 +68,8 @@
                                 </table>
                             </div>
                         </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 067da160660c050a1aa792517b308d330699271e

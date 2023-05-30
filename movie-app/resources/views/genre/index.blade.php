@@ -37,9 +37,15 @@
                                     <tbody>
                                         @foreach ($genres as $genres)
                                         <tr>
+<<<<<<< HEAD
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $genres->nama }}</td>
                                             <td>{{ $genres->deskripsi }}</td>
+=======
+                                            <td>{{ $genres['no'] }}</td>
+                                            <td>{{ $genres['nama_genre'] }}</td>
+                                            <td>{{ $genres['deskripsi'] }}</td>
+>>>>>>> 067da160660c050a1aa792517b308d330699271e
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
@@ -50,4 +56,8 @@
                                 </table>
                             </div>
                         </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 067da160660c050a1aa792517b308d330699271e

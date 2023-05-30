@@ -45,6 +45,7 @@
                                     <tbody>
                                         @foreach ($movies as $movie)
                                         <tr>
+<<<<<<< HEAD
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $movie->judul }}</td>
                                             <td>{{ $movie->poster }}</td>
@@ -52,6 +53,15 @@
                                             <td>{{ $movie->negara }}</td>
                                             <td>{{ $movie->tahun }}</td>
                                             <td>{{ $movie->rating }}</td>
+=======
+                                            <td>{{ $movie['no'] }}</td>
+                                            <td>{{ $movie['judul'] }}</td>
+                                            <td>{{ $movie['poster'] }}</td>
+                                            <td>{{ $movie['genre'] }}</td>
+                                            <td>{{ $movie['negara'] }}</td>
+                                            <td>{{ $movie['tahun'] }}</td>
+                                            <td>{{ $movie['rating'] }}</td>
+>>>>>>> 067da160660c050a1aa792517b308d330699271e
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
                                                 <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
@@ -62,4 +72,8 @@
                                 </table>
                             </div>
                         </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 067da160660c050a1aa792517b308d330699271e

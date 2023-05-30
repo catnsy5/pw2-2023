@@ -28,4 +28,8 @@ Route::get('/review', [ReviewController::class, 'index']);
 
 Route::get('/user', function () {
     return view('user/index');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 067da160660c050a1aa792517b308d330699271e
