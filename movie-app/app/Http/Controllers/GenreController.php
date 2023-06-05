@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 namespace App\Http\Controllers;
@@ -24,7 +23,9 @@ class GenreController extends Controller
      */
     public function create()
     {
-        //
+        $genres = Genre::all();
+        
+        return view('genre/create', compact('genres'));
     }
 
     /**
@@ -32,7 +33,14 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'nama' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        Genre::create($validateData);
+        return redirect('/genre')->with('succes', 'Data berhasil ditambahkan');
+
     }
 
     /**
@@ -64,77 +72,7 @@ class GenreController extends Controller
      */
     public function destroy(Genre $genre)
     {
-        //
+        $genre->delete();
+        return redirect('/genre')->with('succes', 'Data berhasil dihapus');
     }
 }
-=======
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Models\Genre;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-class GenreController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $genre = new Genre;
-        $genres = $genre->getAllGenres();
-
-        return view('genre/index', ['genres' => $genres]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Genre $genre)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Genre $genre)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Genre $genre)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Genre $genre)
-    {
-        //
-    }
-}
->>>>>>> 067da160660c050a1aa792517b308d330699271e

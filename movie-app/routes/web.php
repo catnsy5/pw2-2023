@@ -22,14 +22,28 @@ Route::get('/', function () {
 
 Route::get('/movies', [MovieController::class, 'index']);
 
+Route::get('/movies/create', [MovieController::class, 'create']);
+
+Route::post('/movies', [MovieController::class, 'store']);
+
+Route::delete('/movies/{movie}', [MovieController::class, 'destroy']);
+
 Route::get('/genre', [GenreController::class, 'index']);
+
+Route::get('/genre/create', [GenreController::class, 'create']);
+
+Route::post('/genre', [GenreController::class, 'store']);
+
+Route::delete('/genre/{genre}', [GenreController::class, 'destroy']);
 
 Route::get('/review', [ReviewController::class, 'index']);
 
+Route::get('/review/create', [ReviewController::class, 'create']);
+
+Route::post('/review', [ReviewController::class, 'store']);
+
+Route::delete('/review/{review}', [ReviewController::class, 'destroy']);
+
 Route::get('/user', function () {
     return view('user/index');
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 067da160660c050a1aa792517b308d330699271e

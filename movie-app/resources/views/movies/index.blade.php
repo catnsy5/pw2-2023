@@ -7,10 +7,15 @@
                                 <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
                                 <li class="breadcrumb-item active">Movies</li>
                             </ol>
-                            <a href="#">
+                            <a href="/movies/create">
                                 <button class="btn btn-success" type="submit">Create Data</button>
                             </a>
                         </div>
+                        @if (session('succes'))
+                            <div class="alert alert-succes">
+                                {{ session('succes')}}
+                            </div>
+                        @endif
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -45,7 +50,6 @@
                                     <tbody>
                                         @foreach ($movies as $movie)
                                         <tr>
-<<<<<<< HEAD
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $movie->judul }}</td>
                                             <td>{{ $movie->poster }}</td>
@@ -53,18 +57,14 @@
                                             <td>{{ $movie->negara }}</td>
                                             <td>{{ $movie->tahun }}</td>
                                             <td>{{ $movie->rating }}</td>
-=======
-                                            <td>{{ $movie['no'] }}</td>
-                                            <td>{{ $movie['judul'] }}</td>
-                                            <td>{{ $movie['poster'] }}</td>
-                                            <td>{{ $movie['genre'] }}</td>
-                                            <td>{{ $movie['negara'] }}</td>
-                                            <td>{{ $movie['tahun'] }}</td>
-                                            <td>{{ $movie['rating'] }}</td>
->>>>>>> 067da160660c050a1aa792517b308d330699271e
                                             <td>
                                                 <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                                                <form action="/movies/{{$movie->id}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -72,8 +72,4 @@
                                 </table>
                             </div>
                         </div>
-<<<<<<< HEAD
 @endsection
-=======
-@endsection
->>>>>>> 067da160660c050a1aa792517b308d330699271e
