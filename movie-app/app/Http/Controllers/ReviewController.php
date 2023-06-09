@@ -42,7 +42,7 @@ class ReviewController extends Controller
         ]);
 
         Review::create($validateData);
-        return redirect('/review')->with('succes', 'Data berhasil ditambahkan');
+        return redirect('/review')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -58,7 +58,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        return view('review/edit', compact('review'));
     }
 
     /**
@@ -66,7 +66,16 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $validateData = $request->validate([
+            'film' => 'required',
+            'user' => 'required',
+            'rating' => 'required|numeric',
+            'review' => 'required',
+            'tanggal' => 'required',
+        ]);
+
+        $review->update($validateData);
+        return redirect('/review')->with('success', 'Data berhasil diupdate');
     }
 
     /**
@@ -75,6 +84,6 @@ class ReviewController extends Controller
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect('/review')->with('succes', 'Data berhasil dihapus');
+        return redirect('/review')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -11,6 +11,11 @@
                                 <button class="btn btn-success" type="submit">Create Data</button>
                             </a>
                         </div>
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success')}}
+                            </div>
+                        @endif
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -35,14 +40,14 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($genres as $genres)
+                                        @foreach ($genres as $genre)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $genres->nama }}</td>
-                                            <td>{{ $genres->deskripsi }}</td>
+                                            <td>{{ $genre->nama }}</td>
+                                            <td>{{ $genre->deskripsi }}</td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                                                <form action="/genre/{{$genres->id}}" method="post">
+                                                <a href="/genre/{{$genre->id}}/edit" class="btn btn-sm btn-warning"> Edit</a>
+                                                <form action="/genre/{{$genre->id}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger"
